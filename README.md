@@ -15,5 +15,5 @@
 * 始めの状態
 
 ## feature/helloWorld_button
-* [公式のGetStart](https://vcontainer.hadashikick.jp/getting-started/hello-world) をやったもの 
+* [公式のGetStart](https://vcontainer.hadashikick.jp/getting-started/hello-world) をやったもの
 * ボタンを押すことでHelloWorldが表示される
