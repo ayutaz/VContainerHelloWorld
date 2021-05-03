@@ -19,4 +19,6 @@
 * ボタンを押すことでHelloWorldが表示される
 
 ## feature/hello_button_for_UniRx
-* [こちらのサイト](https://xrdnk.hateblo.jp/entry/2021/03/28/223210) を ~~パクって~~ 参考にUniRxを導入してみたもの
+* [VContainer v1.6.0 で HelloWorld](https://xrdnk.hateblo.jp/entry/2021/03/28/223210)
+* [VContainerを組み込んだゲームサンプル](https://qiita.com/kenta-san/items/21bc7e0ebe1ded6e2ac7)
+* 上の二つのサイトからコードを ~~パクって~~ 参考にUniRxを導入してみたもの
