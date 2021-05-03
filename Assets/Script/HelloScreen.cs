@@ -1,10 +1,24 @@
-﻿using UnityEngine;
+﻿using System;
+using UniRx;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace MyGame
 {
-    public class HelloScreen : MonoBehaviour
+    public class HelloScreen : MonoBehaviour,IHelloScreen
     {
-        public Button helloButton;
+        [SerializeField] private Button helloButton;
+
+
+        public IObservable<Unit> OnClickButton()
+        {
+            return helloButton.OnClickAsObservable();
+        }
+    }
+
+    public interface IHelloScreen
+    {
+        IObservable<Unit> OnClickButton();
     }
 }
+

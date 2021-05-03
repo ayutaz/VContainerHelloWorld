@@ -1,11 +1,14 @@
+using System;
+using UniRx;
 using VContainer.Unity;
 
 namespace MyGame
 {
-    public class GamePresenter : IStartable
+    public class GamePresenter : IStartable,IDisposable
     {
         private readonly HelloWorldService _helloWorldService;
-        private readonly HelloScreen _helloScreen; 
+        private readonly IHelloScreen _helloScreen;
+        private readonly CompositeDisposable _compositeDisposable = new CompositeDisposable();
 
         public GamePresenter(HelloWorldService helloWorldService,HelloScreen helloScreen)
         {
@@ -15,7 +18,12 @@ namespace MyGame
 
         void IStartable.Start()
         {
-            _helloScreen.helloButton.onClick.AddListener(() => _helloWorldService.Hello());
+            _helloScreen.OnClickButton().Subscribe(_=>_helloWorldService.Hello()).AddTo(_compositeDisposable);
+        }
+
+        public void Dispose()
+        {
+            _compositeDisposable?.Dispose();
         }
     }
 }
